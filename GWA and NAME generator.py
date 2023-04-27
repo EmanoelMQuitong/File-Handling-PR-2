@@ -6,8 +6,12 @@
 
 #Generate numbers for GWA
 import random as rd
-def gwa(num):
-    for i in range(20):
-        num = rd.uniform(1.00,5.00)
-        print("%.2f" % num)
-    return num
+
+NAMES = open('names.txt', 'r')
+for line in NAMES:
+    num = rd.uniform(1,5) 
+    num = "%.2f"%num
+    GWA_NAMES = open('GWA_and_NAME.txt', 'a')
+    GWA_NAMES.write(num), GWA_NAMES.write(" "), GWA_NAMES.write(line)
+    
+
