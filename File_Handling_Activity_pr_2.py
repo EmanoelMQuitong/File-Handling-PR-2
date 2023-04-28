@@ -14,6 +14,12 @@ with open(filename) as fn:
 #Sort
 GWA_NAMES.sort()
 print(GWA_NAMES)
+
 #Write Sorted contents based on GWA
+fn2 = 'GWAnNames_sorted.txt'
+with open(fn2, 'w') as fs:
+    for inp in GWA_NAMES:
+        fs.write(inp + '\n')
+
 
 #Write the GWA and Name with the highest GWA
