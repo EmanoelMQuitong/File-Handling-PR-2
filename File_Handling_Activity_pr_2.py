@@ -13,7 +13,11 @@ with open(filename) as fn:
 
 #Sort
 GWA_NAMES.sort()
+print('\n')
+print("The following names and numbers are the sorted names and General weigthed average with respect to their class performance.")
+print('\n')
 print(GWA_NAMES)
+print('\n')
 
 #Write Sorted contents based on GWA
 fn2 = 'GWAnNames_sorted.txt'
@@ -21,5 +25,10 @@ with open(fn2, 'w') as fs:
     for inp in GWA_NAMES:
         fs.write(inp + '\n')
 
-
 #Write the GWA and Name with the highest GWA
+GWA_position = int(input("Which GWA position do you desire to find out? "))
+file = open('GWAnNames_sorted.txt', 'r')
+lines = file.readlines()
+line = lines[GWA_position - 1]
+file.close()
+print(line)
