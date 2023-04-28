@@ -11,10 +11,17 @@ with open(filename) as fn:
     for line in fn:
         GWA_NAMES.append(line.strip())
 
+
+BLUE = '\033[94m'
+DARKCYAN = '\033[36m'
+PURPLE = '\033[95m'
+GREEN = '\033[92m'
+BOLD = '\033[1m'
+END = '\033[0m'
 #Sort
 GWA_NAMES.sort()
 print('\n')
-print("The following names and numbers are the sorted names and General weigthed average with respect to their class performance.")
+print(DARKCYAN +BOLD +"The following names and numbers are the sorted names and General weigthed average with respect to their class performance." + END )
 print('\n')
 print(GWA_NAMES)
 print('\n')
@@ -26,9 +33,11 @@ with open(fn2, 'w') as fs:
         fs.write(inp + '\n')
 
 #Write the GWA and Name with the highest GWA
-GWA_position = int(input("Which GWA position do you desire to find out? "))
+GWA_position = int(input(GREEN + BOLD + "Which GWA position do you desire to find out? "+ END))
 file = open('GWAnNames_sorted.txt', 'r')
 lines = file.readlines()
 line = lines[GWA_position - 1]
 file.close()
-print(line)
+print("The student on the"+ PURPLE + BOLD , GWA_position, END + " position is "+ PURPLE + BOLD + line + END)
+print(PURPLE +BOLD +"CONGRATULATIONS!!!" + END )
+
