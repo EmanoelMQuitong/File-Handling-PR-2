@@ -9,7 +9,7 @@ GWA_NAMES = list()
 filename = 'GWA_and_NAME.txt'
 with open(filename) as fn:
     for line in fn:
-        GWA_NAMES.append(line)
+        GWA_NAMES.append(line.strip())
 
 #Sort
 GWA_NAMES.sort()
